@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --bg-dark: hsla(218, 23%, 21%, 1);
+  --bg-light: hsla(201, 41%, 82%, 1);
+  --bg-button: hsla(6, 89%, 69%, 1);
+  --fc-dark: hsla(258, 9%, 32%, 1);
+  --fc-title-dark: hsla(210, 37%, 23%, 1);
+  --ff-body: 'Poppins', sans-serif;
+  --ff-title: 'Staatliches', cursive;
+}
+
+body::before {
+  content: "";
+
+  width: 100%;
+  height: 46.5rem;
+  background: var(--bg-dark);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body {
+  background: var(--bg-light);
+}
+
+.page {
+  width: 75rem;
+  margin: 0 auto;
+}
+
+header {
+  width: 75rem;
+  margin: 10.7rem 0 16.4rem;
+  text-align: center;
+}
+
+header h1 {
+  font: 3.6rem/4.5rem var(--ff-title);
+  color: white;
+}
+
+header p {
+  font: 1.6rem/2.4rem var(--ff-body);
+  color: white;
+  height: 4.6rem;
+}
+
+header::after {
+  content: "INFORMAÇÕES PESSOAISS";
+  
+  background: var(--bg-button);
+  width: 75rem;
+  height:13.3rem;
+  border-radius: 2rem 2rem 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 33.2rem;
+
+  font: 2.4rem/3.4rem var(--ff-title);
+  color: white;
+}
+
+form {
+  padding: 1.6rem 6.4rem 6.4rem;
+  background: white;
+}
+
+fieldset {
+  border: none;
+}
+
+.name-wrapper {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.input-wrapper {
+  width: 100%;
+  margin-top: 1.6rem;
+}
+
+label {
+  font: 1.4rem/2.4rem var(--ff-body);
+  color: var(--fc-dark);
+}
+
+label span {
+  font: 1.2rem/2.0rem var(--ff-body);
+  color: hsla(258, 14%, 77%, 1);
+  margin-left: .9rem;
+}
+
+label span:hover {
+  color: rgb(124, 122, 129);
+
+}
+
+input {
+  display: block;
+
+  width: 100%;
+  height: 6.4rem;
+  padding: 2rem;
+  margin-top: .8rem;
+
+  border: 1px solid hsla(240, 24%, 92%, 1);
+  border-radius: .8rem;
+
+  background: hsla(240, 33%, 99%, 1);
+}
+
+legend {
+  font: 2.4rem/3.4rem var(--ff-title);
+  color: var(--fc-title-dark);
+  text-align: center;
+
+  width: 100%;
+  padding: 3.2rem 0 0.8rem;
+  border-bottom: 1px solid hsla(240, 24%, 92%, 1);
+}
+
+.input-wrapper.mentor,
+.input-wrapper.feedback,
+div.date-wrapper {
+  margin-top: 3.2rem;
+}
+
+input,
+.input-wrapper textarea,
+#mentor {
+  color: rgb(124, 122, 129);
+  font: 1.4rem/2.4rem var(--ff-body);
+}
+
+select#mentor {
+  display: block;
+
+  width: calc(50% - 1.1rem);
+  height: 6.4rem;
+  padding: 2rem;
+  margin-top: .8rem;
+
+  border: 1px solid hsla(240, 24%, 92%, 1);
+  border-radius: .8rem;
+
+  background: hsla(240, 33%, 99%, 1);
+}
+
+.input-wrapper textarea {
+  display: block;
+
+  width: 100%;
+  padding: 2rem;
+  margin-top: .8rem;
+
+  border: 1px solid hsla(240, 24%, 92%, 1);
+  border-radius: .8rem;
+
+  background: hsla(240, 33%, 99%, 1);
+}
+
+div#checkbox {
+  margin-top: 3rem;
+  position: relative;
+}
+
+input#no-questions {
+  opacity: 0;
+
+  position: absolute;
+  top: -.7rem;
+  left: .1rem;
+
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+div#checkbox label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .8rem;
+}
+
+div#checkbox label::before {
+  content: "";
+
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+
+  border: 1px solid hsla(240, 24%, 92%, 1);
+  border-radius: .8rem;
+  background: hsla(240, 33%, 99%, 1);
+}
+
+input#no-questions:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+input#no-questions:focus + label::before {
+  outline: .2rem solid black;
+}
+
+div.date-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+div.input-wrapper.date {
+  margin-right: .2rem;
+  width: 30rem;
+}
+
+/* Hide Calendar Icon In Chrome */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Hide Clock Icon In Chrome */
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input#button {
+  margin-top: 6.4rem;
+  height: 5.1rem;
+  padding: 0;
+  
+  font: 2.0rem/2.6rem var(--ff-title);
+  color: white;
+
+  background: var(--bg-button);
+}
